@@ -1,0 +1,107 @@
+# Columns description
+## Main table
+- id_contract: forwarding contract identifier to connect tables main and routes
+- expenses: a contract related costs; the target column
+- duty_count: number of customs crossings
+- refrigerated: whether a given contract will be performed with a refrigerated trailer
+- id_payer: contract payer's identifier
+- id_currency: the identifier of the currency in which the contract is paid
+- direction: direction of the contract
+- temperature: temperature to be maintained in a refrigerated trailer
+- load_size_type: type of cargo size to be transported
+- contract_type: type of a contract
+- euro_exchange_rate: Euro exchange rate at the start of the contract
+- id_service_type: course type identifier
+- first_load_lat: latitude of the first cargo load
+- first_load_lon: longitude of the first cargo load
+- last_unload_lat: latitude of the last cargo unload
+- last_unload_lon: longitude of the last cargo unload
+- route_start_lat: latitude of the beginning of a route
+- route_start_lon: longitude of the beginning of a route
+- route_end_lat: latitude of the end of a route
+- route_end_lon: longitude of the end of a route
+- first_load_country: country of first cargo loading
+- last_unload_country: country of last cargo unloading
+- route_start_country: country of the beginning of a route
+- route_end_country: country of the end of a route
+- route_start_datetime: planned time of the beginning of a route
+- route_end_datetime: planned time of the end of a route
+- km_empty: kilometers to be covered with empty trailer
+- km_nonempty: kilometers to be covered with nonempty trailer
+- train_km: kilometers where the trailer will be transported by a train
+- prim_train_line: identifier of the main train line covered
+- train_intervals: the number of route intervals in which the trailer will be transported by a train
+- ferry_duration: estimated time to be spent on a ferry
+- prim_ferry_line: identifier of the main ferry line covered
+- ferry_intervals: the number of ferry transports
+- km_total: total kilometers to be covered according to the route plan
+- max_weight: maximum weight to be carried during the route
+
+## Routes table
+- id_contract: forwarding contract identifier to connect tables main and routes
+- id_contractor: an indicator of whether the route step will be performed by an external contractor
+- id_vehicle: an indicator of whether a vehicle will be used to perform the given step
+- id_trailer: an indicator of whether a trailer will be used to perform the given step
+- step: sequence number of a contract step
+- step_type: contract step type
+- if_empty: an indicator of whether during a given step the trailer will be empty
+- external_fleet: an indicator of whether the route step will be performed by an external contractor
+- kg_load_unload: kilograms of cargo to be loaded or unloaded from the trailer in a given step
+- kg_current: kilograms of cargo that are going to be carried at the begining of a given step
+- ferry: an indicator of whether a given step is going to be carried out by a ferry
+- ferry_duration: estimated time on a ferry in a given step
+- ferry_line: identifier of the ferry line used in a given step
+- train: an indicator of whether a given step is going to be carried out by a train
+- train_km: planned kilometers to be covered by a train for a given step
+- train_line: identifier of the train line used in a given step
+- tail_init: an indicator of whether a given step is an arrival to the main route of the contract
+- tail_fin: whether a given step is an driving the vehicle off the route of the contract after the end of a contract
+- tail: whether a given step is a tail_init or tail_fin
+- latitude: latitude of the end route step point
+- longitude: longitude of the end route step point
+- city: city of the route step point
+- address: address of the route step point
+- country_code: country code of the route step point
+- estimated_time: estimated (planned) time of arrival to the route step point
+- km: planned kilometers to be covered
+- km_nonempty: nonempty (with cargo) kilometers to be covered
+- km_empty: empty (without cargo) kilometers to be covered
+- km_haversine: haversine distance from the previous route point to the end of the corresponding route point
+- id_vehicle_model: identifier of the vehicle model that will perform the given step
+- vehicle_axle_count: number of axles of the vehicle that will perform the given step
+- vehicle_kerb_weight: kerb weight of the vehicle that will perform the given step
+- vehicle_engine_capacity: engine capacity of the vehicle that will perform the given step
+- vehicle_engine_power: engine power of the vehicle that will perform the given step
+- vehicle_payload_kg: payload in kilograms of the vehicle that will perform the given step
+- vehicle_payload_pallets: payload in the maximal number of pallets of the vehicle that will perform the given step
+- vehicle_payload_m3: payload in the cubic meters of the vehicle that will perform the given step
+- vehicle_cargo_hold_height: height of the cargo of the vehicle that will perform the given step
+- vehicle_cargo_hold_width: width of the cargo of the vehicle that will perform the given step
+- vehicle_cargo_hold_length: length of the cargo of the vehicle that will perform the given step
+- vehicle_length: length of the vehicle that will perform the given step
+- vehicle_width: width of the vehicle that will perform the given step
+- vehicle_heigth: heigth of the vehicle that will perform the given step
+- id_vehicle_type: identifier of a type of the vehicle that will perform the given step
+- vehicle_type: type of the vehicle that will perform the given step
+- vehicle_capacity_type: type of a capacity of the vehicle that will perform the given step
+- id_trailer_model: identifier of the trailer model that will perform the given step
+- trailer_axle_count: number of axles of the trailer that will perform the given step
+- trailer_kerb_weight: kerb weight of the trailer that will perform the given step
+- trailer_payload_kg: payload in kilograms of the trailer that will perform the given step
+- trailer_payload_pallets: payload in the maximal number of pallets of the trailer that will perform the given step
+- trailer_payload_m3: payload in the cubic meters of the trailer that will perform the given step
+- trailer_cargo_hold_height: height of the cargo of the trailer that will perform the given step
+- trailer_cargo_hold_width: width of the cargo of the trailer that will perform the given step
+- trailer_cargo_hold_length: length of the cargo of the trailer that will perform the given step
+- trailer_generator: whether the trailer is equipped with a generator
+- trailer_length: length of the trailer that will perform the given step
+- trailer_width: width of the trailer that will perform the given step
+- trailer_heigth: heigth of the trailer that will perform the given step
+- id_trailer_type: identifier of a type of the trailer that will perform the given step
+
+## Fuel prices table
+- date: date of price
+- disel_type1_price: price of type 1 fuel
+- disel_type2_price: price of type 2 fuel
+- disel_type3_price: price of type 3 fuel
+
